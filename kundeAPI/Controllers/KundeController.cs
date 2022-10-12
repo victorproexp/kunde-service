@@ -15,6 +15,7 @@ public class KundeController : ControllerBase
     public KundeController(ILogger<KundeController> logger, KundeService kundeService)
     {
         _logger = logger;
+        _logger.LogDebug(1, "NLog injected into KundeController");
         _kundeService = kundeService;
     }
 
