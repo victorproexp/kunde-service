@@ -1,5 +1,6 @@
 using NLog;
 using NLog.Web;
+using Microsoft.OpenApi.Models;
 using kundeAPI.Models;
 using kundeAPI.Services;
 
@@ -19,7 +20,15 @@ try
     builder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+    builder.Services.AddSwaggerGen(options =>
+    {
+        options.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "kundeAPI",
+            Description = "En ASP.NET Core Web API til at håndtere kunder",
+        });
+    });
 
     // NLog: Setup NLog for Dependency injection
     builder.Logging.ClearProviders();

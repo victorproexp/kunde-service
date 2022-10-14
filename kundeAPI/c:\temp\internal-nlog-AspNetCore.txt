@@ -8,3 +8,23 @@
 2022-10-12 20:59:23.1874 Info Shutdown() called. Logger closing...
 2022-10-12 20:59:23.1881 Info Closing old configuration.
 2022-10-12 20:59:23.1991 Info Logger has been closed down.
+2022-10-14 09:58:09.6892 Info Message Template Auto Format enabled
+2022-10-14 09:58:09.7290 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-14 09:58:09.7756 Info Adding target FileTarget(Name=allfile)
+2022-10-14 09:58:09.7770 Info Adding target FileTarget(Name=ownFile-web)
+2022-10-14 09:58:09.7776 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-10-14 09:58:09.8435 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/victorpascale/Projects/4semester/kunde-service/kundeAPI/bin/Debug/net6.0/NLog.config
+2022-10-14 09:58:10.1152 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/victorpascale/Projects/4semester/kunde-service/kundeAPI/bin/Debug/net6.0/NLog.config
+2022-10-14 09:59:11.9322 Info Shutdown() called. Logger closing...
+2022-10-14 09:59:11.9331 Info Closing old configuration.
+2022-10-14 09:59:11.9488 Info Logger has been closed down.
+2022-10-14 09:59:19.2722 Info Message Template Auto Format enabled
+2022-10-14 09:59:19.3234 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-14 09:59:19.3692 Info Adding target FileTarget(Name=allfile)
+2022-10-14 09:59:19.3705 Info Adding target FileTarget(Name=ownFile-web)
+2022-10-14 09:59:19.3705 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-10-14 09:59:19.4697 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/victorpascale/Projects/4semester/kunde-service/kundeAPI/bin/Debug/net6.0/NLog.config
+2022-10-14 09:59:19.6905 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/victorpascale/Projects/4semester/kunde-service/kundeAPI/bin/Debug/net6.0/NLog.config
+2022-10-14 09:59:48.7408 Info Shutdown() called. Logger closing...
+2022-10-14 09:59:48.7408 Info Closing old configuration.
+2022-10-14 09:59:48.7505 Info Logger has been closed down.
