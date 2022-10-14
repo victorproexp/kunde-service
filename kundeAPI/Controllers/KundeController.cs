@@ -75,4 +75,16 @@ public class KundeController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpGet("version")]
+    public IEnumerable<string> GetVersion()
+    {
+        var properties = new List<string>();
+        var assembly = typeof(Program).Assembly;
+        foreach (var attribute in assembly.GetCustomAttributesData())
+        {
+            properties.Add($"{attribute.AttributeType.Name} - {attribute.ToString()}");
+        }
+        return properties;
+    }
 }
