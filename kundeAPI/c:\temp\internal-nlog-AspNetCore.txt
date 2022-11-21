@@ -94,3 +94,10 @@
 2022-11-21 11:21:20.4994 Info Shutdown() called. Logger closing...
 2022-11-21 11:21:20.4994 Info Closing old configuration.
 2022-11-21 11:21:20.5233 Info Logger has been closed down.
+2022-11-21 12:12:08.2940 Info Message Template Auto Format enabled
+2022-11-21 12:12:08.3460 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 12:12:08.4372 Info Adding target FileTarget(Name=allfile)
+2022-11-21 12:12:08.4508 Info Adding target FileTarget(Name=ownFile-web)
+2022-11-21 12:12:08.4572 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-11-21 12:12:08.5282 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/victorpascale/Projects/4semester/kunde-service/kundeAPI/bin/Debug/net6.0/NLog.config
+2022-11-21 12:12:08.8314 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/victorpascale/Projects/4semester/kunde-service/kundeAPI/bin/Debug/net6.0/NLog.config
