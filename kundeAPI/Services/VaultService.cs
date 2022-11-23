@@ -19,7 +19,7 @@ public class VaultService
 
     public async Task Configure()
     {
-        var EndPoint = "https://localhost:8201/";
+        var EndPoint = "https://vault:8201/";
         var httpClientHandler = new HttpClientHandler();
         httpClientHandler.ServerCertificateCustomValidationCallback =
             (message, cert, chain, sslPolicyErrors) => { return true; };
