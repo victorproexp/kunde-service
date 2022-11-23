@@ -6,11 +6,15 @@ using VaultSharp.V1.Commons;
 namespace kundeAPI.Services;
 public class VaultService
 {
+    private readonly ILogger<VaultService> _logger;
     public string ConnectionString { get; set; } = null!;
 
-    public VaultService()
+    public VaultService(ILogger<VaultService> logger)
     {
+        _logger = logger;
+
         Task.Run(() => this.Configure()).Wait();
+        _logger.LogInformation(ConnectionString);
     }
 
     public async Task Configure()
