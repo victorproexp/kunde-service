@@ -10,9 +10,9 @@ public class KundeController : ControllerBase
 {
     private readonly ILogger<KundeController> _logger;
 
-    private readonly KundeService _kundeService;
+    private readonly IKundeService _kundeService;
 
-    public KundeController(ILogger<KundeController> logger, KundeService kundeService)
+    public KundeController(ILogger<KundeController> logger, IKundeService kundeService)
     {
         _logger = logger;
         _logger.LogDebug(1, "NLog injected into KundeController");

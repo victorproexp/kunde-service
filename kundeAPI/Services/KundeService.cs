@@ -4,13 +4,13 @@ using MongoDB.Driver;
 
 namespace kundeAPI.Services;
 
-public class KundeService
+public class KundeService : IKundeService
 {
     private readonly IMongoCollection<Kunde> _kundeCollection;
-    private readonly VaultService _vaultService;
+    private readonly IVaultService _vaultService;
 
     public KundeService(
-        IOptions<KundeDatabaseSettings> KundeDatabaseSettings, VaultService vaultService)
+        IOptions<KundeDatabaseSettings> KundeDatabaseSettings, IVaultService vaultService)
     {
         _vaultService = vaultService;
         var mongoClient = new MongoClient(vaultService.ConnectionString);

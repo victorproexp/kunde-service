@@ -15,8 +15,8 @@ try
     builder.Services.Configure<KundeDatabaseSettings>(
         builder.Configuration.GetSection("KundeDatabase"));
     
-    builder.Services.AddSingleton<KundeService>();
-    builder.Services.AddSingleton<VaultService>();
+    builder.Services.AddSingleton<IKundeService, KundeService>();
+    builder.Services.AddSingleton<IVaultService, VaultService>();
 
     builder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
