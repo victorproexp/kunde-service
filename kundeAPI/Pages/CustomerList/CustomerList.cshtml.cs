@@ -6,6 +6,7 @@ namespace MyApp.Namespace
 {
     public class CustomerListModel : PageModel
     {
+        [BindProperty]
         public List<Kunde>? Kunder { get; set; }
         public async Task OnGetAsync()
         {
