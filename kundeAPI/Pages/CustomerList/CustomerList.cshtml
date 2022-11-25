@@ -1,0 +1,30 @@
+﻿@page "/customerlist"
+@model MyApp.Namespace.CustomerListModel
+@{
+}
+
+<h1>Kunder</h1>
+<hr/>
+
+@if (Model.Kunder is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Navn</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kunde in Model.Kunder)
+            {
+                <tr>
+                    <td>@kunde.Navn</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

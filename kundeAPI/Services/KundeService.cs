@@ -10,16 +10,16 @@ public class KundeService : IKundeService
     private readonly IVaultService _vaultService;
 
     public KundeService(
-        IOptions<KundeDatabaseSettings> KundeDatabaseSettings, IVaultService vaultService)
+        IOptions<KundeDatabaseSettings> kundeDatabaseSettings, IVaultService vaultService)
     {
         _vaultService = vaultService;
         var mongoClient = new MongoClient(vaultService.ConnectionString);
 
         var mongoDatabase = mongoClient.GetDatabase(
-            KundeDatabaseSettings.Value.DatabaseName);
+            kundeDatabaseSettings.Value.DatabaseName);
 
         _kundeCollection = mongoDatabase.GetCollection<Kunde>(
-            KundeDatabaseSettings.Value.KundeCollectionName);
+            kundeDatabaseSettings.Value.KundeCollectionName);
     }
 
     public async Task<List<Kunde>> GetAsync() =>

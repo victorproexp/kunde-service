@@ -18,6 +18,8 @@ try
     builder.Services.AddSingleton<IKundeService, KundeService>();
     builder.Services.AddSingleton<IVaultService, VaultService>();
 
+    builder.Services.AddRazorPages();
+
     builder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
@@ -49,6 +51,8 @@ try
     app.UseAuthorization();
 
     app.MapControllers();
+
+    app.MapRazorPages();
 
     app.Run();
 }
