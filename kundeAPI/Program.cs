@@ -3,6 +3,7 @@ using NLog.Web;
 using Microsoft.OpenApi.Models;
 using kundeAPI.Models;
 using kundeAPI.Services;
+using Azure.Identity;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
@@ -16,7 +17,6 @@ try
         builder.Configuration.GetSection("KundeDatabase"));
     
     builder.Services.AddSingleton<IKundeService, KundeService>();
-    builder.Services.AddSingleton<IVaultService, VaultService>();
 
     builder.Services.AddRazorPages();
 
@@ -44,6 +44,14 @@ try
     {
         app.UseSwagger();
         app.UseSwaggerUI();
+    }
+
+    // Configure Azure Key Vault
+    if (builder.Environment.IsProduction())
+    {
+        builder.Configuration.AddAzureKeyVault(
+            new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/"),
+            new DefaultAzureCredential());
     }
 
     app.UseHttpsRedirection();
