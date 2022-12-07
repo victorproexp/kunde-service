@@ -20,7 +20,7 @@ public class VaultService : IVaultService
 
     public async Task Configure()
     {
-        var EndPoint = Environment.GetEnvironmentVariable("Vault");
+        var EndPoint = Environment.GetEnvironmentVariable("VAULT_ADDR");
         var httpClientHandler = new HttpClientHandler();
         httpClientHandler.ServerCertificateCustomValidationCallback =
             (message, cert, chain, sslPolicyErrors) => { return true; };
