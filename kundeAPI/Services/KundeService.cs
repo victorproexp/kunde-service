@@ -7,13 +7,15 @@ namespace kundeAPI.Services;
 public class KundeService : IKundeService
 {
     private readonly IMongoCollection<Kunde> _kundeCollection;
-    private readonly IVaultService _vaultService;
+    //private readonly IVaultService _vaultService;
 
     public KundeService(
-        IOptions<KundeDatabaseSettings> kundeDatabaseSettings, IVaultService vaultService)
+        IOptions<KundeDatabaseSettings> kundeDatabaseSettings)
     {
-        _vaultService = vaultService;
-        var mongoClient = new MongoClient(vaultService.ConnectionString);
+        //_vaultService = vaultService;
+        //var mongoClient = new MongoClient(vaultService.ConnectionString);
+
+        var mongoClient = new MongoClient(kundeDatabaseSettings.Value.ConnectionString);
 
         var mongoDatabase = mongoClient.GetDatabase(
             kundeDatabaseSettings.Value.DatabaseName);

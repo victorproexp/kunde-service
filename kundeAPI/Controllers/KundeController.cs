@@ -26,6 +26,9 @@ public class KundeController : ControllerBase
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<Kunde>> Get(string id)
     {
+        _logger.LogInformation("Get called at {DT}",
+            DateTime.UtcNow.ToLongTimeString());
+                
         var Kunde = await _kundeService.GetAsync(id);
 
         if (Kunde is null)
@@ -39,6 +42,9 @@ public class KundeController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post(Kunde newKunde)
     {
+        _logger.LogInformation("Post called at {DT}",
+            DateTime.UtcNow.ToLongTimeString());
+
         await _kundeService.CreateAsync(newKunde);
 
         return CreatedAtAction(nameof(Get), new { id = newKunde.Id }, newKunde);
@@ -47,6 +53,9 @@ public class KundeController : ControllerBase
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, Kunde updatedKunde)
     {
+        _logger.LogInformation("Update called at {DT}",
+            DateTime.UtcNow.ToLongTimeString());
+
         var Kunde = await _kundeService.GetAsync(id);
 
         if (Kunde is null)
@@ -64,6 +73,9 @@ public class KundeController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
+        _logger.LogInformation("Delete called at {DT}",
+            DateTime.UtcNow.ToLongTimeString());
+
         var Kunde = await _kundeService.GetAsync(id);
 
         if (Kunde is null)
