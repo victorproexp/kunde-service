@@ -7,14 +7,10 @@ namespace kundeAPI.Services;
 public class KundeService : IKundeService
 {
     private readonly IMongoCollection<Kunde> _kundeCollection;
-    private readonly ILogger<KundeService> _logger;
 
     public KundeService(
-        IOptions<KundeDatabaseSettings> kundeDatabaseSettings, ILogger<KundeService> logger, IConfiguration configuration)
-    {
-        _logger = logger;
-        _logger.LogInformation(configuration["ConnectionString"]);
-        
+        IOptions<KundeDatabaseSettings> kundeDatabaseSettings, IConfiguration configuration)
+    {        
         var mongoClient = new MongoClient(configuration["ConnectionString"]);
 
         var mongoDatabase = mongoClient.GetDatabase(

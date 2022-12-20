@@ -12,7 +12,7 @@ namespace MyApp.Namespace
         {
             using HttpClient client = new HttpClient()
             {
-                BaseAddress = new Uri("http://localhost:80/")
+                BaseAddress = new Uri("http://localhost:81/")
             };
 
             Kunder = await client.GetFromJsonAsync<List<Kunde>>("api/kunde");
