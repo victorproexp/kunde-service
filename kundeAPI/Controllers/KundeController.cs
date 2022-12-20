@@ -9,14 +9,17 @@ namespace kundeAPI.Controllers;
 public class KundeController : ControllerBase
 {
     private readonly ILogger<KundeController> _logger;
-
     private readonly IKundeService _kundeService;
 
     public KundeController(ILogger<KundeController> logger, IKundeService kundeService)
     {
         _logger = logger;
-        _logger.LogDebug(1, "NLog injected into KundeController");
         _kundeService = kundeService;
+
+        var hostName = System.Net.Dns.GetHostName();
+        var ips = System.Net.Dns.GetHostAddresses(hostName);
+        var _ipaddr = ips.First().MapToIPv4().ToString();
+        _logger.LogInformation(1, $"KundeController responding from {_ipaddr}");
     }
 
     [HttpGet]
