@@ -16,7 +16,6 @@ try
         builder.Configuration.GetSection("KundeDatabase"));
     
     builder.Services.AddSingleton<IKundeService, KundeService>();
-    builder.Services.AddSingleton<IVaultService, VaultService>();
 
     builder.Services.AddRazorPages();
 
